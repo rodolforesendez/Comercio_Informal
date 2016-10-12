@@ -1,0 +1,35 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <h4 class="modal-title">Add Payment</h4>
+    </div>
+    <div class="modal-body">
+        <form class="bs-example form-horizontal" action="" method="post" name="forma">
+            
+            <div class="sk-spinner sk-spinner-wave" ng-if="loadingM">
+                <div class="sk-rect1"></div>
+                <div class="sk-rect2"></div>
+                <div class="sk-rect3"></div>
+                <div class="sk-rect4"></div>
+                <div class="sk-rect5"></div>
+            </div>
+
+            <div class="row" ng-if="!loadinM">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"><i class="fa fa-asterisk"></i> Cantidad</label>
+                        <div class="col-md-8">
+                            <div class="input-group m-b">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" ng-model="modal.cantidad" class="text-right form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" ng-click="cancel()"><i class="fa fa-times"></i> Cerrar</button>
+        <button type="button" class="btn btn-primary" ng-click="ok()" ng-disabled="forma.$invalid||modal.cantidad==0"><i class="fa fa-check"></i> Agregar</button>
+    </div>
+</div>

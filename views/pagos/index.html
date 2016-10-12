@@ -1,0 +1,133 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInUp">
+
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Datos del Comerciante</h5>
+                </div>
+                <div class="ibox-content">
+
+                    <div class="sk-spinner sk-spinner-wave" ng-if="loading">
+                        <div class="sk-rect1"></div>
+                        <div class="sk-rect2"></div>
+                        <div class="sk-rect3"></div>
+                        <div class="sk-rect4"></div>
+                        <div class="sk-rect5"></div>
+                    </div>
+                    
+                    <div class="alert alert-danger" ng-if="error&&!loading">
+                        <i class="fa fa-warning"></i> No se encontraron pagos.
+                    </div>
+
+                    <div class="table-responsive" ng-if="!loading&&!error">
+                        <table class="table table-bordered no-wrap">
+                            <tr>
+                                <th width="400">NOMBRE / APELLIDO PATERNO / APELLIDO MATERNO</th>
+                                <td>{{datos.comerciante.nombre}}</td>
+                            </tr>
+                            <tr>
+                                <th width="400">UBICACION</th>
+                                <td>{{datos.comerciante.ubicacion}}</td>
+                            </tr>
+                            <tr>
+                                <th width="400">GIRO</th>
+                                <td>{{datos.comerciante.giro}}</td>
+                            </tr>
+                            <tr>
+                                <th width="400">TIPO</th>
+                                <td>{{datos.comerciante.tipo}}</td>
+                            </tr>
+                            <tr>
+                                <th width="400">HORARIO</th>
+                                <td>{{datos.comerciante.horario}}</td>
+                            </tr>
+                            <tr>
+                                <th width="400">VIGENCIA PERMISO</th>
+                                <td>{{datos.comerciante.vigencia_permiso}}</td>
+                            </tr>
+                            <tr>
+                                <th width="400">DIMENSIONES</th>
+                                <td>{{datos.comerciante.dimensiones}}</td>
+                            </tr>
+                            <tr>
+                                <th width="400">LIC. SANITARIA</th>
+                                <td>{{datos.comerciante.lic_sanitaria}}</td>
+                            </tr>
+                            <tr>
+                                <th width="400">OBSERVACIONES</th>
+                                <td>{{datos.comerciante.observaciones}}</td>
+                            </tr>
+                            <tr>
+                                <th width="400">CUOTA</th>
+                                <td>$ {{datos.comerciante.cuota}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Listado de Pagos</h5>
+                </div>
+                <div class="ibox-content">
+                    
+                    <div class="row m-b">
+                        <div class="col-sm-12">
+                            <a ng-click="agregarPago()" class="m-r btn btn-primary btn-md"><i class="fa fa-plus"></i> Agregar Pago</a>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-danger">
+                        <i class="fa fa-warning"></i> La vigencia del permiso esta vencida.
+                    </div>
+
+                    <div class="sk-spinner sk-spinner-wave" ng-if="loading">
+                        <div class="sk-rect1"></div>
+                        <div class="sk-rect2"></div>
+                        <div class="sk-rect3"></div>
+                        <div class="sk-rect4"></div>
+                        <div class="sk-rect5"></div>
+                    </div>
+                    
+                    <div class="alert alert-danger" ng-if="error&&!loading">
+                        <i class="fa fa-warning"></i> No se encontraron pagos.
+                    </div>
+
+                    <div class="table-responsive" ng-if="!loading&&!error">
+                        <table class="table table-bordered no-wrap">
+                            <thead>
+                                <tr>
+                                    <th width="160">Fecha / Hora</th>
+                                    <th>Comentarios</th>
+                                    <th width="120">Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="pago in datos.pagos | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                                    <td>{{pago.fecha}}</td>
+                                    <td>{{pago.comentarios}}</td>
+                                    <td class="text-right"> $ {{pago.cantidad}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row" ng-if="!error&&!loading">
+                        <div class="col-md-12">
+                            <uib-pagination 
+                                total-items="totalItems" 
+                                ng-model="currentPage" 
+                                ng-change="setPage(currentPage)" 
+                                items-per-page="entryLimit"
+                                class="pagination-sm pull-right"
+                            ></uib-pagination>
+                        </div>        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
