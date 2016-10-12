@@ -31,16 +31,12 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             templateUrl: "views/minor.html",
             data: { pageTitle: 'Example view' }
         })
-        .state('captura', {
-            abstract: true,
-            url: "/captura",
-            templateUrl: "views/common/content.html"
-        })
-        .state('captura.comerciante', {
+        
+        .state('index.comerciante', {
             url: "/comerciante",
-            templateUrl: "views/minor.html",
-            data: { pageTitle: 'Lightbox Gallery' }
-            /*resolve: {
+            templateUrl: "views/comerciantes/agregar.html",
+            /*data: { pageTitle: 'Lightbox Gallery' }
+            resolve: {
                 loadPlugin: function ($ocLazyLoad) {
                     return $ocLazyLoad.load([
                         {

@@ -1,1 +1,130 @@
-agregar.html
+<div class="wrapper wrapper-content animated fadeInRight" ng-controller="CapturaController">
+   
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Captura de Datos del Comerciante
+                      <!--  <small>With custom checbox and radion elements.</small>-->
+                    </h5>
+             <!--       <div ibox-tools="" class="ng-scope"><div class="ibox-tools dropdown" uib-dropdown="">
+    <a ng-click="showhide()"> <i class="fa fa-chevron-up"></i></a>
+    <a href="" uib-dropdown-toggle="" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-wrench"></i>
+    </a>
+    <ul uib-dropdown-menu="" class="dropdown-menu">
+        <li><a href="">Config option 1</a>
+        </li>
+        <li><a href="">Config option 2</a>
+        </li>
+    </ul>
+    <a ng-click="closebox()"><i class="fa fa-times"></i></a>
+</div></div>-->
+                </div>
+                <div class="ibox-content">
+                    <form method="get" class="form-horizontal ng-pristine ng-valid">
+
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">Nombre Completo</label>
+                          
+                          <div class="col-sm-3"><input type="text" class="form-control" placeholder="" ng-model="formmodel.nombre" id="nombre"><div class="help">Nombre</div></div>
+                          <div class="col-sm-3"><input type="text" class="form-control" placeholder="" ng-model="formmodel.apellidop" id="apellidop"><div class="help">Apellido Paterno</div></div>
+                          <div class="col-sm-3"><input type="text" class="form-control" placeholder="" ng-model="formmodel.apellidom" id="apellidom"><div class="help">Apellido Materno</div></div>
+                          
+                        </div>
+
+
+                        <div class="form-group">
+                        	<label class="col-sm-2 control-label">Ubicacion</label>
+
+                            <div class="col-sm-9"><input type="text" class="form-control" placeholder="" ng-model="formmodel.ubicacion" id="ubicacion"></div>
+                        </div>
+
+                        	<div class="form-group">
+                        		<label class="col-sm-2 control-label">Giro</label>
+
+	                            <div class="col-sm-10">
+
+		                            <select class="form-control m-b" ng-model="formmodel.giro" id="giro">
+		                                <option value="option 1">option 1</option>
+		                                <option value="option 2">option 2</option>
+		                                <option value="option 3">option 3</option>
+		                                <option value="option 4">option 4</option>
+		                            </select>
+
+	                               
+	                            </div>
+                        	</div>
+                        	<div class="form-group">
+                        		<label class="col-sm-2 control-label">Tipo</label>
+
+	                            <div class="col-sm-10">
+
+		                            <select class="form-control m-b" ng-model="formmodel.tipo" id="tipo">
+		                                <option value="option 1">option 1</option>
+		                                <option value="option 2">option 2</option>
+		                                <option value="option 3">option 3</option>
+		                                <option value="option 4">option 4</option>
+		                            </select>
+
+	                               
+	                            </div>
+                        	</div>
+                        	<div class="form-group">
+	                          <label class="col-sm-2 control-label">Horario</label>
+	                          
+	                          <div class="col-sm-3"><input type="text" class="form-control" placeholder="" ng-model="formmodel.Horario1" id="horario1"><div class="help">De</div></div>
+	                          <div class="col-sm-3"><input type="text" class="form-control" placeholder="" ng-model="formmodel.horario2" id="horario2"><div class="help">A</div></div>
+	                          
+	                          
+                        	</div>
+                        	<div class="form-group">
+                        		<label class="col-sm-2 control-label">Vigencia</label>
+
+                            	<div class="col-sm-3"><input type="text" class="form-control" placeholder="" ng-model="formmodel.vigencia" id="vigencia"></div>
+                        	</div>
+                        	<div class="form-group">
+	                        	<label class="col-sm-2 control-label">Dimensiones</label>
+
+	                            <div class="col-sm-9"><input type="text" class="form-control" placeholder="" ng-model="formmodel.dimensiones" id="dimensiones"></div>
+                        	</div>
+                        	<div class="form-group">
+	                        	<label class="col-sm-2 control-label">Licencia Sanitaria</label>
+
+	                            <div class="col-sm-9"><input type="text" class="form-control" placeholder="" ng-model="formmodel.sanitaria" id="sanitaria"></div>
+                        	</div>
+                        	<div class="form-group">
+	                        	<label class="col-sm-2 control-label">Observaciones</label>
+
+	                            <div class="col-sm-9"><input type="text" class="form-control" placeholder="" ng-model="formmodel.observ" id="observ"></div>
+                        	</div>
+                        	<div class="form-group">
+	                        	<label class="col-sm-2 control-label">Cuota</label>
+
+	                            <div class="col-sm-3">
+	                            	<div class="input-group m-b">
+	                            		<span class="input-group-addon">$</span>
+	                            		<input type="text" class="form-control text-right">
+                                    </div>
+	                            </div>
+                        	</div>
+
+
+
+                        
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <a href="#!/index/comerciantes" class="btn btn-danger"> <i class="fa fa-times"></i> Cancelar</a>
+                                <button class="btn btn-primary pull-right" ng-click="onSubmit();"><i class="fa fa-save"></i> Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
