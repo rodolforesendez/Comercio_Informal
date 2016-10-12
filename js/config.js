@@ -30,6 +30,22 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             data: { pageTitle: 'Listado de Comerciantes' }
         })
 
+        .state('index.comerciante', {
+            url: "/comerciante",
+            templateUrl: "views/comerciantes/agregar.html",
+            /*data: { pageTitle: 'Lightbox Gallery' }
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return $ocLazyLoad.load([
+                        {
+                            files: ['js/plugins/blueimp/jquery.blueimp-gallery.min.js','css/plugins/blueimp/css/blueimp-gallery.min.css']
+                        }
+                    ]);
+                }
+            }*/
+
+        })
+
         /* RUTAS DE PAGOS */
         .state('index.pagos', {
             url: "/pagos/:id",
