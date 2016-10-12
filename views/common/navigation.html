@@ -2,20 +2,8 @@
     <div class="sidebar-collapse">
         <ul side-navigation class="nav metismenu" id="side-menu">
             <li class="nav-header">
+                <img src="img/logo.png" class="img-responsive">
 
-                <div class="profile-element" uib-dropdown>
-                    <a uib-dropdown-toggle href>
-                            <span class="clear">
-                                <span class="block m-t-xs">
-                                    <strong class="font-bold">Nombre Usuario </strong>
-                             </span>
-                                <span class="text-muted text-xs block">Opciones<b class="caret"></b></span>
-                            </span>
-                    </a>
-                    <ul uib-dropdown-menu="" class="animated fadeInRight m-t-xs">
-                        <li><a href="">Salir</a></li>
-                    </ul>
-                </div>
                 <div class="logo-element">
                     IN+
                 </div>
@@ -23,27 +11,8 @@
             </li>
 
             <li ui-sref-active="active">
-                <a ui-sref="index.main"><i class="fa fa-laptop"></i> <span class="nav-label">Sistemas</span> </a>
+                <a ui-sref="index.comerciantes"><i class="fa fa-users"></i> <span class="nav-label">Comerciantes</span> </a>
             </li>
-          <!--  <li ui-sref-active="active">
-                <a ui-sref="index.minor"><i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span></a>
-            </li>
-           -->
-
-            <li ng-class="{active: $state.includes('captura')}">
-                <a href=""><i class="fa fa-picture-o"></i> <span class="nav-label">Menu Principal</span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('gallery')}">
-                    <li ui-sref-active="active"><a ui-sref="captura.comerciante">Captura</a></li>
-                   
-
-                </ul>
-            </li>
-
-
-
-
         </ul>
-        
-
     </div>
 </nav>

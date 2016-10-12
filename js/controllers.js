@@ -1,11 +1,4 @@
-/**
- * INSPINIA - Responsive Admin Theme
- *
- */
 
-/**
- * MainCtrl - controller
- */
 function MainCtrl2() {
 
     this.userName = 'Example user';

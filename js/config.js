@@ -7,7 +7,7 @@
  *
  */
 function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
-    $urlRouterProvider.otherwise("/index/main");
+    $urlRouterProvider.otherwise("/index/comerciantes");
 
     $ocLazyLoadProvider.config({
         // Set to true if you want to see what and when is dynamically loaded
@@ -21,35 +21,22 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             url: "/index",
             templateUrl: "views/common/content.html",
         })
-        .state('index.main', {
-            url: "/main",
-            templateUrl: "views/main.html",
-            data: { pageTitle: 'Example view' }
+
+        /* RUTAS DE COMERCIANTES */
+        .state('index.comerciantes', {
+            url: "/comerciantes",
+            templateUrl: "views/comerciantes/index.html",
+            controller: "Comerciantes",
+            data: { pageTitle: 'Listado de Comerciantes' }
         })
-        .state('index.minor', {
-            url: "/minor",
-            templateUrl: "views/minor.html",
-            data: { pageTitle: 'Example view' }
-        })
-        .state('captura', {
-            abstract: true,
-            url: "/captura",
-            templateUrl: "views/common/content.html"
-        })
-        .state('captura.comerciante', {
-            url: "/comerciante",
-            templateUrl: "views/minor.html",
-            data: { pageTitle: 'Lightbox Gallery' }
-            /*resolve: {
-                loadPlugin: function ($ocLazyLoad) {
-                    return $ocLazyLoad.load([
-                        {
-                            files: ['js/plugins/blueimp/jquery.blueimp-gallery.min.js','css/plugins/blueimp/css/blueimp-gallery.min.css']
-                        }
-                    ]);
-                }
-            }*/
-        })
+
+        /* RUTAS DE PAGOS */
+        .state('index.pagos', {
+            url: "/pagos/:id",
+            templateUrl: "views/pagos/index.html",
+            controller: "PagosController",
+            data: { pageTitle: 'Registrar Pago' }
+        })        
       
 }
 angular
