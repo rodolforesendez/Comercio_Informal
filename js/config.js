@@ -21,7 +21,6 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             url: "/index",
             templateUrl: "views/common/content.html",
         })
-<<<<<<< HEAD
 
         /* RUTAS DE COMERCIANTES */
         .state('index.comerciantes', {
@@ -29,7 +28,8 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             templateUrl: "views/comerciantes/index.html",
             controller: "Comerciantes",
             data: { pageTitle: 'Listado de Comerciantes' }
-=======
+        })
+
         .state('index.comerciante', {
             url: "/comerciante",
             templateUrl: "views/comerciantes/agregar.html",
@@ -43,7 +43,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
                     ]);
                 }
             }*/
->>>>>>> local
+
         })
 
         /* RUTAS DE PAGOS */
