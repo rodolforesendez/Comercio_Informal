@@ -21,6 +21,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             url: "/index",
             templateUrl: "views/common/content.html",
         })
+<<<<<<< HEAD
 
         /* RUTAS DE COMERCIANTES */
         .state('index.comerciantes', {
@@ -28,6 +29,21 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             templateUrl: "views/comerciantes/index.html",
             controller: "Comerciantes",
             data: { pageTitle: 'Listado de Comerciantes' }
+=======
+        .state('index.comerciante', {
+            url: "/comerciante",
+            templateUrl: "views/comerciantes/agregar.html",
+            /*data: { pageTitle: 'Lightbox Gallery' }
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return $ocLazyLoad.load([
+                        {
+                            files: ['js/plugins/blueimp/jquery.blueimp-gallery.min.js','css/plugins/blueimp/css/blueimp-gallery.min.css']
+                        }
+                    ]);
+                }
+            }*/
+>>>>>>> local
         })
 
         /* RUTAS DE PAGOS */
