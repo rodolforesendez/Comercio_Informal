@@ -1,25 +1,36 @@
 angular
   .module('inspinia')
-  .controller('Comerciantes', function($scope, $http){
+  .controller('Comerciantes', function($scope, $http, Catalogos){
 
-    $scope.loading = false;
+    $scope.loading = true;
     $scope.buscar  = "";
     $scope.currentPage = 1;
-    $scope.entryLimit  = 30;
+    $scope.entryLimit  = 22;
 
-    $scope.comerciantes = [
-      { idcomerciante: 1, nombre: "a es ta le pongo algo diferente deinformacion", giro: "tipo de giro dos", tipo: "tipo", vigencia: "fecha de vigencia"},
-      { idcomerciante: 2, nombre: "rodolfo resendez", giro: "tipo de giro", tipo: "tipo", vigencia: "fecha de vigencia"},
-    ];
-
-    $scope.totalItems = $scope.comerciantes.length;
+    Catalogos.Comerciantes($scope.buscar, $scope.currentPage, $scope.entryLimit).then(function(response){
+      $scope.comerciantes = response.comerciantes;
+      $scope.totalItems = response.totalItems;
+      $scope.loading = false;
+    });
 
     $scope.filtrar = function(){
-      console.log("buscando por "+ $scope.buscar);
+      $scope.currentPage = 1;
+      $scope.loading = true;
+      Catalogos.Comerciantes($scope.buscar, $scope.currentPage, $scope.entryLimit).then(function(response){
+        $scope.comerciantes = response.comerciantes;
+        $scope.totalItems = response.totalItems;
+        $scope.loading = false;
+      });
     };
 
     $scope.setPage = function( page ){
       $scope.currentPage = page;
+      $scope.loading = true;
+      Catalogos.Comerciantes($scope.buscar, $scope.currentPage, $scope.entryLimit).then(function(response){
+        $scope.comerciantes = response.comerciantes;
+        $scope.totalItems = response.totalItems;
+        $scope.loading = false;
+      });
     };
 
     $scope.borrarComerciante = function( index ){
@@ -29,11 +40,8 @@ angular
 
   .controller('CapturaController',function($scope,$http){
     		
-
-        $http.get(servidor + 'ObtenerGiro.php').then(function (response){
-          
-          $scope.giros=response.data;
-                    
+        $http.get(servidor+'ObtenerGiro.php').then(function (response){
+          $scope.giros = response.data;
         });
 
     		$scope.onSubmit= function(){

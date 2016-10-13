@@ -20,7 +20,7 @@
                         </div>
                     </div>
 
-                    <div class="sk-spinner sk-spinner-wave" ng-if="loading">
+                    <div class="sk-spinner sk-spinner-wave m-t" ng-if="loading">
                         <div class="sk-rect1"></div>
                         <div class="sk-rect2"></div>
                         <div class="sk-rect3"></div>
@@ -36,7 +36,7 @@
                         <table class="table table-bordered no-wrap">
                             <thead>
                                 <tr>
-                                    <th>C&oacute;digo Causante</th>
+                                    <th width="140">C&oacute;digo Causante</th>
                                     <th>Giro</th>
                                     <th>Tipo</th>
                                     <th>Nombre</th>
@@ -46,11 +46,11 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="comerciante in comerciantes | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
-                                    <td>{{comerciante.codigo}}</td>
-                                    <td>{{comerciante.giro}}</td>
-                                    <td>{{comerciante.tipo}}</td>
-                                    <td>{{comerciante.nombre}}</td>
-                                    <td>{{comerciante.vigencia}}</td>
+                                    <td>{{comerciante.CodigoDeCausante}}</td>
+                                    <td>{{comerciante.ActividadTipo}}</td>
+                                    <td>{{comerciante.AmbulanteTipo}}</td>
+                                    <td>{{comerciante.NombreCompleto}}</td>
+                                    <td>{{comerciante.VigenciaPermiso}}</td>
                                     <td class="text-right">
                                         <a href="#/index/pagos/{{comerciante.idcomerciante}}" class="btn btn-sm btn-primary m-r"> <i class="fa fa-usd"></i> </a>
                                         <a href="#/index/comerciante_editar/{{comerciante.idcomerciante}}" class="btn btn-sm btn-default m-r"> <i class="fa fa-pencil"></i> </a>
