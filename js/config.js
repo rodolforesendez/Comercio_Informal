@@ -33,16 +33,23 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('index.comerciante', {
             url: "/comerciante",
             templateUrl: "views/comerciantes/agregar.html",
-            /*data: { pageTitle: 'Lightbox Gallery' }
+            data: { pageTitle: 'Lightbox Gallery' },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
                     return $ocLazyLoad.load([
                         {
-                            files: ['js/plugins/blueimp/jquery.blueimp-gallery.min.js','css/plugins/blueimp/css/blueimp-gallery.min.css']
+                            files: ['js/plugins/moment/moment.min.js']
+                        },
+                        {
+                           files: ['css/plugins/clockpicker/clockpicker.css', 'js/plugins/clockpicker/clockpicker.js']
+                        },
+                        {
+                            name: 'datePicker',
+                            files: ['css/plugins/datapicker/angular-datapicker.css','js/plugins/datapicker/angular-datepicker.js']
                         }
                     ]);
                 }
-            }*/
+            }
 
         })
 

@@ -11,7 +11,7 @@ $serverName="MNLSVRSQL";
 $connectionInfo = array( "Database"=>"01_Administracion", "UID"=>"lmarquez", "PWD"=>"123ABC456DEF");
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 $params = array();
-	$options =  array( "Scrollable" => SQLSRV_CURSOR_KEYSET );
+$options =  array( "Scrollable" => SQLSRV_CURSOR_KEYSET );
 
 
 if( $conn ) {

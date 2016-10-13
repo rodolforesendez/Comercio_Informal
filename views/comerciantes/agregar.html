@@ -45,13 +45,11 @@
                         	<div class="form-group">
                         		<label class="col-sm-2 control-label">Giro</label>
 
-	                            <div class="col-sm-10">
+	                            <div class="col-sm-3">
 
 		                            <select class="form-control m-b" ng-model="formmodel.giro" id="giro">
-		                                <option value="option 1">option 1</option>
-		                                <option value="option 2">option 2</option>
-		                                <option value="option 3">option 3</option>
-		                                <option value="option 4">option 4</option>
+		                                <option value="{{ giro.ActividadID }}" ng-repeat=" giro in giros">{{ giro.Descripcion }}</option>
+		                               
 		                            </select>
 
 	                               
@@ -60,13 +58,20 @@
                         	<div class="form-group">
                         		<label class="col-sm-2 control-label">Tipo</label>
 
-	                            <div class="col-sm-10">
+	                            <div class="col-sm-3">
 
 		                            <select class="form-control m-b" ng-model="formmodel.tipo" id="tipo">
-		                                <option value="option 1">option 1</option>
-		                                <option value="option 2">option 2</option>
-		                                <option value="option 3">option 3</option>
-		                                <option value="option 4">option 4</option>
+		                                <option value="FIJO">FIJO</option>
+		                                <option value="SEMIFIJO">SEMIFIJO</option>
+		                                <option value="AMBULANTE">AMBULANTE</option>
+		                                <option value="AMBULANTE COMIDA">AMBULANTE COMIDA</option>
+                                        <option value="MERCADO RODANTE">MERCADO RODANTE</option>
+                                        <option value="MERCADO RODANTE COMIDA">MERCADO RODANTE COMIDA</option>
+                                        <option value="FIJO COMIDA">FIJO COMIDA</option>
+                                        <option value="SEMIFIJO COMIDA">SEMIFIJO COMIDA</option>
+
+
+
 		                            </select>
 
 	                               
@@ -75,16 +80,44 @@
                         	<div class="form-group">
 	                          <label class="col-sm-2 control-label">Horario</label>
 	                          
-	                          <div class="col-sm-3"><input type="text" class="form-control" placeholder="" ng-model="formmodel.Horario1" id="horario1"><div class="help">De</div></div>
-	                          <div class="col-sm-3"><input type="text" class="form-control" placeholder="" ng-model="formmodel.horario2" id="horario2"><div class="help">A</div></div>
+	                          <div class="col-sm-3">
+
+                                <div class="input-group " clock-picker="" data-autoclose="true">
+                                    <input type="text" class="form-control" value="08:00" ng-model="formmodel.horario1" id="horario1">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </span>
+                                </div><div class="help">De</div>
+
+                              </div>
+                              <div class="col-sm-3">
+
+                                <div class="input-group " clock-picker data-autoclose="true">
+                                    <input type="text" class="form-control" value="09:30" ng-model="formmodel.horario2" id="horario2">
+                                    <span class="input-group-addon">
+                                        <span class="fa fa-clock-o"></span>
+                                    </span>
+                                </div>
+                                <div class="help">A</div>
+
+                              </div>
+
+
+	                          
 	                          
 	                          
                         	</div>
                         	<div class="form-group">
                         		<label class="col-sm-2 control-label">Vigencia</label>
+                                <div class="col-sm-3">
+                            	               <div class="input-group date">
+                <input type="datetime" class="form-control ng-pristine ng-valid ng-scope ng-not-empty ng-touched" date-time="" ng-model="formmodel.vigencia" id="vigencia" view="date" auto-close="true" min-view="date" format="YYYY-MM-DD">
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+            </div>
 
-                            	<div class="col-sm-3"><input type="text" class="form-control" placeholder="" ng-model="formmodel.vigencia" id="vigencia"></div>
+                                </div>
                         	</div>
+
                         	<div class="form-group">
 	                        	<label class="col-sm-2 control-label">Dimensiones</label>
 
@@ -106,7 +139,7 @@
 	                            <div class="col-sm-3">
 	                            	<div class="input-group m-b">
 	                            		<span class="input-group-addon">$</span>
-	                            		<input type="text" class="form-control text-right">
+	                            		<input type="text" class="form-control text-right" ng-model="formmodel.cuota" id="cuota">
                                     </div>
 	                            </div>
                         	</div>
