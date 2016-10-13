@@ -29,7 +29,12 @@ angular
 
   .controller('CapturaController',function($scope,$http){
     		
-    		$scope.formmodel={};
+
+        $http.get(servidor + 'ObtenerGiro.php').then(function (response){
+          
+          $scope.giros=response.data;
+                    
+        });
 
     		$scope.onSubmit= function(){
     			
@@ -41,7 +46,9 @@ angular
 		                      
 
 		                 });
+
                      */
+
 			};	
 
   });
