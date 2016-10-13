@@ -14,7 +14,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="input-group">
-                                <input type="text" placeholder="Buscar comerciante..." ng-model="buscar" class="input-md form-control">
+                                <input type="text" placeholder="Buscar nombre o código de causante..." ng-model="buscar" class="input-md form-control">
                                 <span class="input-group-btn"><button type="button" ng-click="filtrar()" class="btn btn-md btn-primary"> <i class="fa fa-search"></i> </button> </span>
                             </div>
                         </div>
@@ -36,6 +36,7 @@
                         <table class="table table-bordered no-wrap">
                             <thead>
                                 <tr>
+                                    <th>C&oacute;digo Causante</th>
                                     <th>Giro</th>
                                     <th>Tipo</th>
                                     <th>Nombre</th>
@@ -45,6 +46,7 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="comerciante in comerciantes | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                                    <td>{{comerciante.codigo}}</td>
                                     <td>{{comerciante.giro}}</td>
                                     <td>{{comerciante.tipo}}</td>
                                     <td>{{comerciante.nombre}}</td>

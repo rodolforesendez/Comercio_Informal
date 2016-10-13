@@ -5,7 +5,7 @@ angular
     $scope.loading = false;
     $scope.buscar  = "";
     $scope.currentPage = 1;
-    $scope.entryLimit  = 1;
+    $scope.entryLimit  = 30;
 
     $scope.comerciantes = [
       { idcomerciante: 1, nombre: "a es ta le pongo algo diferente deinformacion", giro: "tipo de giro dos", tipo: "tipo", vigencia: "fecha de vigencia"},
